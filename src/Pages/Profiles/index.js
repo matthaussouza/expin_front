@@ -24,7 +24,7 @@ export default function Profiles() {
     .then((resp) => {
       const invitesInfo = resp.data.map((invite) => {
         const profile = perfis?.find((profile) => invite.solicitante === profile.id);
-        return { ... profile, inviteId: invite.id };
+        return { ...profile, inviteId: invite.id };
       });
       setInvites(invitesInfo);
     })
