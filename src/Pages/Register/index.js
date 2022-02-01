@@ -6,15 +6,14 @@ export default function Register() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [companyName, setCompanyName] = useState();
-  const [phone, setPhone] = useState();
+  //const [phone, setPhone] = useState();
   const [password, setPassword] = useState();
   const history = useHistory();
 
   function submit(e){
     e.preventDefault();
     api.post('/perfis/', {
-      nome: name,
-      telefone : phone, 
+      nome: name, 
       email: email, 
       senha: password, 
       nome_empresa: companyName
@@ -32,10 +31,6 @@ export default function Register() {
         Nome
       </label>
       <input type="text" onChange={(e) => setName(e.target.value)}/>
-      <label>
-        Telefone
-      </label>
-      <input type="text" onChange={(e) => setPhone(e.target.value)}/>
       <label>
         Email
       </label>
